@@ -108,6 +108,20 @@
     }
   </style>
   <body>
+    <input type="number" id="num1" placeholder="Enter first number" />
+    <input type="number" id="num2" placeholder="Enter second number" />
+    <button id="subtract">-</button>
+    <button id="add">+</button>
+    <button id="divid">÷</button>
+    <button id="multiply">x</button>
+
+    <p id="result">0</p><br>
+    <input type="number" name="" id="age">
+    <button id="check">Check Age</button>
+    <p id="result1"></p> <br><br>
+
+    <hr />
+
     <section>
       <div class="calculator">
         <div class="display">
@@ -183,16 +197,17 @@
           result.textContent = number1 * number2;
         });
 
-      let age = document.getElementById("age");
-      let result1 = document.getElementById("result");
-      document.getElementById("check").addEventListener("click", function () {
-        let userAge = Number(age.value);
-        if (userAge >= 18) {
-          result.textContent = "You are an audlt";
-        } else {
-          result.textContent = "You are not an adult";
-        }
-      });
+        let age = document.getElementById("age");
+        let result1 = document.getElementById('result');
+        document.getElementById('check').addEventListener("click", function(){
+            let userAge = Number(age.value)
+            if (userAge >= 18 ) {
+                result.textContent = "You are an audlt"
+            }else {
+                result.textContent = "You are not an adult"
+            }
+        })
+        
     </script>
   </body>
 </html>
