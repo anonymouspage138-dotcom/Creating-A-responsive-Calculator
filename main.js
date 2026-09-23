@@ -1,12 +1,31 @@
+const calculation = document.getElementById('expression')
+const result = document.getElementById ('result')
 
-function calculateAge(){
-let user = document.getElementById("age-input").value
-if (user === ""){
-alert("the field is empty")
-} else {
-    let currentYear = new Date().getFullYear();
-const birthYear = currentYear - user
-document.getElementById("result").innerHTML = "Your were born in " + birthYear
+let display = ""
+
+function appendDisplay (input){
+    display += input
+    calculation.textContent = display
+
 }
 
+function clearDisplay(){
+    display = "";
+    calculation.textContent = "";
+    result.textContent = "0";
+
+}
+
+function calculate(){
+    result.textContent = eval(display)
+}
+
+function backspace(){
+    display = display.slice(0, -1)
+    calculation.textContent = display
+}
+
+function changeSign(){
+    display = display * -1
+    calculation.textContent = display;
 }
